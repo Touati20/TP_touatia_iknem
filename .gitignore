@@ -17,6 +17,9 @@ cmake_install.cmake
 Makefile
 CTestTestfile.cmake
 
+doc/html/
+doc/latex/
+
 # Fichiers de simulation (sortie)
 *.vtu
 *.vtk

@@ -1,0 +1,41 @@
+# === Doxyfile pour TP particules ===
+
+PROJECT_NAME           = "TP Particules"
+PROJECT_BRIEF          = "Simulation de dynamique moleculaire par cellules liees"
+OUTPUT_DIRECTORY       = .
+OUTPUT_LANGUAGE        = French
+
+# Sources a documenter
+INPUT                  = ../include ../src ../demo ../test
+RECURSIVE              = YES
+FILE_PATTERNS          = *.hxx *.cxx *.cpp *.hpp *.h
+
+# Extraction
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+# Format de sortie
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+
+# Apparence
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+USE_MATHJAX            = YES
+
+# Diagrammes (Graphviz / dot)
+HAVE_DOT               = YES
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+
+# Quiet
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO

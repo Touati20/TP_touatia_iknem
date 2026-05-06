@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -march=native -DNDEBUG -Wall -Wextra -O3 -DNDEBUG CMakeFiles/run_tests.dir/test_particules.cpp.o CMakeFiles/run_tests.dir/test_vecteur.cpp.o CMakeFiles/run_tests.dir/test_univers.cpp.o -o run_tests  ../lib/libgtest_main.a ../src/libparticules.a ../lib/libgtest.a 

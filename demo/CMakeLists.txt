@@ -2,7 +2,7 @@
 # Crée l'exécutable de démonstration : simulation d'impact
 # d'un disque de Lennard-Jones sur une membrane.
 
-add_executable(demo demo.cpp)
+add_executable(demo demo.cxx)
 
 # Lien avec la bibliothèque particules (Particule + Univers + vecteur)
 target_link_libraries(demo PRIVATE particules)

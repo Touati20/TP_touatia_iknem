@@ -2,7 +2,7 @@
 # Ces fichiers ne contiennent pas de fonction main
 # Remplacer ... par les fichiers nécessaires 
 add_library(particules 
-    Particule.cpp 
+    Particule.cxx
     univers.cxx 
     vecteur.cxx
 )

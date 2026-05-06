@@ -1,22 +1,33 @@
-## Indique qu'elle version de cmake minimale est utilisée.
-cmake_minimum_required (VERSION 3.16.3)
+## Indique quelle version de cmake minimale est utilisée.
+cmake_minimum_required(VERSION 3.16.3)
 
-## Specifie le nom du projet et le langage de programmation du projet
-project(Lab5 CXX)
+## Specifie le nom du projet et le langage de programmation
+project(TP_Particules CXX)
 
-## Force le standard 
+## Standard C++17
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-## Mode Release par défaut (= optimisations max si CMAKE_BUILD_TYPE non spécifié)
+## Mode Release par defaut (optimisations max)
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
 endif()
 
-## Options de compilation : -O3 (optims max) -march=native (CPU spécifique) -DNDEBUG (pas d'asserts)
-set(CMAKE_CXX_FLAGS "-O3 -march=native -DNDEBUG -Wall -Wextra")
+## Flags selon le mode :
+##  - Release : ultra-rapide pour la prod
+##  - Profile : avec -pg pour gprof (un peu plus lent mais profilable)
+##  - Debug   : avec symboles pour gdb
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG -Wall -Wextra")
+set(CMAKE_CXX_FLAGS_DEBUG   "-O0 -g -Wall -Wextra")
 
-# === GoogleTest ===
+## Mode Profile : on force les flags car CMake ne reconnait pas ce mode par defaut
+if(CMAKE_BUILD_TYPE STREQUAL "Profile")
+    add_compile_options(-O2 -pg -Wall -Wextra)
+    add_link_options(-pg)
+    message(STATUS "Mode PROFILE active : compilation avec -pg pour gprof")
+endif()
+
+# GoogleTest
 include(FetchContent)
 FetchContent_Declare(
     googletest
@@ -38,10 +49,11 @@ if(APPLE)
     endforeach()
 endif()
 
-## Définir la localisation des entêtes
+## Localisation des entetes
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-## Sous-répertoires
+## Sous-repertoires
 add_subdirectory(src)
 add_subdirectory(test)
 add_subdirectory(demo)
+add_subdirectory(doc)

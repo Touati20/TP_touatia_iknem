@@ -2,9 +2,9 @@
 
 
 add_executable(run_tests 
-    test_particules.cpp
-    test_vecteur.cpp
-    test_univers.cpp
+    test_particules.cxx
+    test_vecteur.cxx
+    test_univers.cxx
 )
 
 

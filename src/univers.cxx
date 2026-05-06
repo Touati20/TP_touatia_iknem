@@ -1,5 +1,5 @@
 /**
- * @file Univers.cxx
+ * @file univers.cxx
  * @brief Implémentations des classes Cellule, Grille et Univers.
  */
 
