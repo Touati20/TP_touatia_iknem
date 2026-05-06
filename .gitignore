@@ -1,0 +1,34 @@
+# Dossiers de build CMake
+build/
+build_*/
+
+# Fichiers compilés
+*.o
+*.obj
+*.a
+*.so
+*.exe
+*.out
+
+# Fichiers générés CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+
+# Fichiers de simulation (sortie)
+*.vtu
+*.vtk
+frames/
+
+# Fichiers temporaires Paraview
+paraview.*.btr
+*.btr
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
