@@ -138,7 +138,6 @@ void Stormer_Verlet(Univers& univers, int nb_part, int dim, double tend, double 
             univers.rescaleV(Ec_cible);
     }
 
-    sauvegarderVTK("etat_final.vtu", univers);
     std::cout << "\nSimulation terminée à t = " << t << "\n";
 }
 
@@ -153,7 +152,7 @@ int main() {
         const double sigma = 1.0;
         const double d0    = std::pow(2.0, 1.0/6.0) * sigma;
 
-        std::filesystem::create_directory("frames");
+        std::filesystem::create_directories("build/frames"); 
 
         Univers univers(dim, 20000, Lx, Ly, rcut);
 
